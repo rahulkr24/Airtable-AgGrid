@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <title>Airtbale Reports</title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="robots" content="noindex" />
+      <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="./css/style.css">
+      <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="report-header">
+        <div class="title" id="title_id">Location Traffic 2025</div>
+
+        <div class="filter-container">
+            <label for="dataSelector" class="filter-label">Reports: </label>
+            <select id="dataSelector" onchange="onDataSelectionChange()" class="filter-select"></select>
+        </div>
+
+
+        <!-- Buttons -->
+        <button id="download-button" class="circular-buttons" onclick="onDownloadClick()">
+          <i class="fas fa-download button-icon"></i> <span class="button-text">Download&nbsp;All</span>
+        </button>
+         <button id="refresh-button" class="circular-buttons" onclick="onBtnRefresh()">
+          <i class="fa-solid fa-arrows-rotate" id="refresh-icon"></i>
+          <span class="button-text">Refresh</span>
+        </button>
+
+      </div>
+
+      <div class="tab-container" id="tab-container"></div>
+
+      <div style="flex: 1">
+        <div id="myGrid" style="height: 100%; text-transform: capitalize;"></div>
+      </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@33.0.3/dist/ag-grid-community.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

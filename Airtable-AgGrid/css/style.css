@@ -1,0 +1,305 @@
+:root,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+html {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  overflow: auto;
+  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.container {
+  display: flex;
+  flex-direction: column; /* Stack header and content vertically */
+  height: 100%;
+  padding: 10px 10px;
+}
+ .title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  flex: 1; /* Ensures the title takes available space */
+}
+
+.report-header{
+  display: flex;
+  justify-content: space-between; /* Distribute space between left and right sections */
+  align-items: center;
+  padding: 10px 10px;
+  background-color: #8E7CC3;
+  height: 40px;
+  gap:20px;
+}
+
+
+#refresh-button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #264358;
+    color: #ffffff;
+    border: 1px solid #264358;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 2s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+#refresh-button:hover {
+    border-color: #000000;
+    background-color: #3b5775;
+    color: #ffffff;
+}
+
+#refresh-button:active {
+    transform: scale(0.95);
+    color: #264358;
+    background-color: #ffffff;
+    border-color: #264358;
+}
+
+
+#download-button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #264358;
+    color: #ffffff;
+    border: 1px solid #264358;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 2s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+#download-button:hover {
+    border-color: #000000;
+    background-color: #3b5775;
+    color: #ffffff;
+}
+
+#download-button:active {
+    transform: scale(0.95);
+    color: #264358;
+    background-color: #ffffff;
+    border-color: #264358;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-animation {
+  animation: rotate 2s linear;
+}
+
+#ag-Grid {
+    height: 93vh;
+    width: 100%;
+}
+.ag-header-cell {
+    background-color: #8E7CC3;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    border-right: 1px solid #ddd; /* Optional: Add border to separate cells */
+}
+
+
+.circular-buttons {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #efefef;
+    background-color: #fcfcfc;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.circular-buttons:hover {
+    transform: scale(1.1);
+}
+
+.circular-buttons:hover .button-text {
+    opacity: 1;
+    top: 33px;
+}
+
+.button-text {
+    position: absolute;
+    bottom: -25px; /* Position it below the button */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #fcfcfc;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s, top 0.3s;
+    }
+
+    .filter-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .filter-label {
+      color: #fcfcfc;
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0;
+    }
+    
+    .filter-select {
+      color: #fcfcfc;
+      font-size: 16px;
+      padding: 5px;
+      font-weight: 500;
+      border: 1px solid #fcfcfc;
+      border-radius: 4px;
+      outline: none;
+      background:  #8E7CC3;
+      min-width: 150px;
+    }
+    
+  
+    
+
+    .tab-container {
+      padding: 0 0 0 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background: #6a599e;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: flex-start; /* Align tabs to the left */
+
+      width: 100%; /* Ensure it takes full width */
+    }
+    
+    .tab {
+      padding: 10px 10px;
+      cursor: pointer;
+      color: white;
+      transition: background 0.2s;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border-right: 1px solid #6a599e;
+    }
+    
+    .tab:last-child {
+      border-right: none;
+    }
+    
+    .tab.active {
+      background: white;
+      color: black;
+      cursor: default;
+      border-radius: 5px 5px 0 0;
+    }
+    
+    .tab:not(.active):hover {
+      background: #8E7CC3;
+    }
+    .dropdown-icon {
+      font-size: 12px;
+      margin-left: 6px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    
+    .dropdown-icon.open {
+      transform: rotate(180deg);
+    }
+    
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+      border-radius: 4px;
+      padding: 5px;
+      min-width: 14rem;
+      margin-top: 5px;
+    }
+    
+    .dropdown-menu div {
+      padding: 8px 12px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    
+    .dropdown-menu div:hover {
+      background-color: #f0f0f0;
+    }
+    
+    .table-container {
+      display: none;
+      background: white;
+      padding: 10px 10px;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .table-container.active {
+      display: block;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 5px;
+    }
+    
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    th {
+      background: #f2f2f2;
+    }
+  
+  .grid-container {
+    height: 840px;
+    width: 100%;
+  }
+
+
+  .ag-theme-alpine {
+    --ag-odd-row-background-color: #fcfcfc;
+    
+  }
+
+.first-column-cell {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
