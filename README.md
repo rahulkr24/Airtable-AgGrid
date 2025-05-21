@@ -1,2 +1,2 @@
 # Airtable-AgGrid
-![Airtable AgGrid Demo](https://drive.google.com/file/d/11xtDhGFo2VF2OCniIo-ZLv-22sJ_W1MZ/view)
+![Airtable AgGrid Demo](https://i.postimg.cc/X7RyBpGd/Airtable-Ag-Grid-Demo.png)
